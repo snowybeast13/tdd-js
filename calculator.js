@@ -52,7 +52,7 @@ const arrayOfNumbers = (total, avarage, maxNum, minNum) => {
   maxNum = Math.max(...numbers);
   minNum = Math.min(...numbers);
 };
-
+arrayOfNumbers()
 
 //Exports
 module.exports = {
