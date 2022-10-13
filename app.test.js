@@ -1,4 +1,6 @@
 const calculator = require("./calculator");
+// const axios = require("axios").default;
+// jest.mock("axios");
 
 //Add test
 describe("Addition of two numbers", () => {
@@ -70,10 +72,27 @@ describe("Multiplication of two numbers if one is string", () => {
 });
 
 //Array of numbers
-describe("Array of numbers", () => {
-  test("Array", () => {
+describe("Array of numbers with string", () => {
+  test("Array to return string and throw error", () => {
     expect(() =>
       calculator.numbersOnly("Hello").toThrow("There's string in number array")
     );
   });
 });
+
+//Object propreties with different values
+describe("Object values to be different values of numbers", () => {
+  test("Object values to be 4,12,21,2", () => {
+    const values = calculator.valuesOfNumbers()
+    expect(values.totalValue).toEqual(4);
+    expect(values.avarageValue).toEqual(12);
+    expect(values.maxValue).toEqual(21);
+    expect(values.minValue).toEqual(2);
+  });
+});
+
+//API
+// test("returns the title of the first album", async () => {
+//   const title = await getFirstAlbumTitle(); // Run the function
+//   expect(title).toEqual("quidem molestiae enim"); // Make an assertion on the result
+// });
