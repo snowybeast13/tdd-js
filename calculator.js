@@ -1,3 +1,5 @@
+// const axios = require("axios").default;
+
 //Add calculation
 const addCalculator = (num1, num2) => {
   if (
@@ -45,14 +47,30 @@ function numbersOnly(value) {
   }
 }
 
-const arrayOfNumbers = (total, avarage, maxNum, minNum) => {
-  total = numbers.length;
-  avarage = numbers.reduce((a, b) => a + b, 0) / numbers.length;
-  console.log(avarage);
-  maxNum = Math.max(...numbers);
-  minNum = Math.min(...numbers);
+//Object with different property values of array of numbers
+const valuesOfNumbers = () => {
+  let total = numbers.length;
+  let avarage = numbers.reduce((a, b) => a + b, 0) / numbers.length;
+  let maxNum = Math.max(...numbers);
+  let minNum = Math.min(...numbers);
+
+  const numValues = {
+    totalValue: total,
+    avarageValue: avarage,
+    maxValue: maxNum,
+    minValue: minNum,
+  };
+  return numValues;
 };
-arrayOfNumbers()
+
+//API
+// async function getFirstAlbumTitle() {
+//   const response = await axios.get(
+//     "https://jsonplaceholder.typicode.com/albums"
+//   );
+//   console.log(response.data);
+//   return response.data[0].title;
+// }
 
 //Exports
 module.exports = {
@@ -62,4 +80,5 @@ module.exports = {
   devide,
   complex,
   numbersOnly,
+  valuesOfNumbers,
 };
