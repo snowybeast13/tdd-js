@@ -83,11 +83,33 @@ describe("Array of numbers with string", () => {
 //Object propreties with different values
 describe("Object values to be different values of numbers", () => {
   test("Object values to be 4,12,21,2", () => {
-    const values = calculator.valuesOfNumbers()
+    const values = calculator.valuesOfNumbers();
     expect(values.totalValue).toEqual(4);
     expect(values.avarageValue).toEqual(12);
     expect(values.maxValue).toEqual(21);
     expect(values.minValue).toEqual(2);
+  });
+});
+
+//Machine for buying snacks test
+// describe("Machine for buying snacks", () => {
+//   test("Return remaining coins", () => {
+//     let totalPrice = 32;
+//     let paidAmount = 200;
+//     // let change = [100, 50, 10, 5, 2, 1];
+//     expect(calculator.getChangeVendingMachine(totalPrice, paidAmount)).toEqual([100, 50, 10, 5, 2, 1]);
+//   });
+// });
+
+describe("Machin for buying snacks second case", () => {
+  test("When paid amount is less than total amount", () => {
+    let paidAmount = 1;
+    let totalPrice = 200;
+    expect(() =>
+      calculator
+        .getChangeVendingMachine(totalPrice, paidAmount)
+        .toThrow("Not enough money")
+    );
   });
 });
 
