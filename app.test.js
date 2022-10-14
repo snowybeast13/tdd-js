@@ -91,15 +91,16 @@ describe("Object values to be different values of numbers", () => {
   });
 });
 
-//Machine for buying snacks test
-// describe("Machine for buying snacks", () => {
-//   test("Return remaining coins", () => {
-//     let totalPrice = 32;
-//     let paidAmount = 200;
-//     // let change = [100, 50, 10, 5, 2, 1];
-//     expect(calculator.getChangeVendingMachine(totalPrice, paidAmount)).toEqual([100, 50, 10, 5, 2, 1]);
-//   });
-// });
+// Machine for buying snacks test
+describe("Machine for buying snacks", () => {
+  test("Return remaining coins", () => {
+    let totalPrice = 32;
+    let paidAmount = 200;
+    expect(calculator.getChangeVendingMachine(totalPrice, paidAmount)).toEqual([
+      100, 50, 10, 5, 2, 1,
+    ]);
+  });
+});
 
 describe("Machin for buying snacks second case", () => {
   test("When paid amount is less than total amount", () => {
