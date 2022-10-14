@@ -63,6 +63,31 @@ const valuesOfNumbers = () => {
   return numValues;
 };
 
+//Machine for buying snacks
+function getChangeVendingMachine(totalPrice, paidAmount) {
+  let change = [];
+  let coins = [1, 2, 5, 10, 20, 50, 100, 200];
+  let difference = paidAmount - totalPrice;
+
+  if (paidAmount === totalPrice) {
+    return change;
+  } else if (paidAmount < totalPrice) {
+    throw Error("Not enough money");
+  }
+
+  for (let i = coins.length - 1; i >= 0; i--) {
+    if (coins[i] <= difference) {
+      change.push(coins[i]);
+      difference -= coins[i];
+      i++;
+
+      console.log("change", change);
+      console.log("difference", difference);
+    }
+  }
+}
+getChangeVendingMachine(32, 200);
+
 //API
 // async function getFirstAlbumTitle() {
 //   const response = await axios.get(
@@ -81,4 +106,5 @@ module.exports = {
   complex,
   numbersOnly,
   valuesOfNumbers,
+  getChangeVendingMachine
 };
