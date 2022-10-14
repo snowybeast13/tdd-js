@@ -85,8 +85,8 @@ function getChangeVendingMachine(totalPrice, paidAmount) {
       console.log("difference", difference);
     }
   }
+  return change
 }
-getChangeVendingMachine(32, 200);
 
 //API
 // async function getFirstAlbumTitle() {
